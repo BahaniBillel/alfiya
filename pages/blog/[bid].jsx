@@ -119,7 +119,7 @@ function Blog({ page }) {
     <>
       <div className="pb-44">
         {posts.map((post) => (
-          <div className="">
+          <div className="" key={post.id}>
             {/* upper ribbon */}
             <div className="hidden bg-black  py-2 text-sm md:px-32 font-semibold text-white font-sans md:flex md:flex-row space-x-5 px-2">
               <p className="text-xs">
@@ -156,6 +156,7 @@ function Blog({ page }) {
                     fill
                     priority
                     className="w-fit grayscale hover:grayscale-0 transition-all duration-700 ease-in-out"
+                    alt="na"
                   />
                   <span className="text-white bg-teal-400 rounded-sm text-sm p-2 z-50 absolute left-5 bottom-5">
                     {post.category}
@@ -172,7 +173,7 @@ function Blog({ page }) {
                     </span>
                   </p>
                   {post.content.map((par) => (
-                    <div className="flex flex-col space-y-5">
+                    <div className="flex flex-col space-y-5" key={par}>
                       <Paragraph
                         subtitle={par.subtitle1}
                         subcontent={par.subcontent1}

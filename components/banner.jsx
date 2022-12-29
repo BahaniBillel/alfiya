@@ -55,9 +55,8 @@ const Banner = () => {
       ref={sliderRef}
     >
       {ImagesData.map((img) => (
-        <div className="keen-slider__slide ">
+        <div className="keen-slider__slide " key={img.id}>
           <Image
-            key={img.id}
             src={img.url}
             className=" h-fit md:absolute md:-top-60 left-0 "
             alt="home banner "

@@ -11,7 +11,7 @@ function ArticleCard({ category, date, image, title, content, href }) {
         <div className=" relative overflow-hidden h-48">
           <h3 className="font-semibold text-sm py-1 ">{category}</h3>
           <Link href={href}>
-            <Image src={image} fill className="w-fit" />
+            <Image src={image} fill className="w-fit" alt="na" />
           </Link>
         </div>
       ) : null}

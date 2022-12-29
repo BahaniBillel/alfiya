@@ -20,7 +20,7 @@ const NavigationBlog = () => {
     <div className=" px-5 md:px-32 py-4 grid  md:grid-cols-12 grid-rows-2 md:grid-rows-1  items-center md:justify-center font-sans bg-slate-50 ">
       <div className="col-span-12 md:col-span-2 relative flex flex-row justify-center items-center">
         <Link href="/">
-          <Image src={logo} contain="true" width={100} />
+          <Image src={logo} contain="true" width={100} alt="na" />
         </Link>
       </div>
 

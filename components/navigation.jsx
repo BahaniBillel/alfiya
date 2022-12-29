@@ -13,7 +13,7 @@ const Navigation = () => {
     <div className=" px-20 md:px-44 py-4 md:grid grid-cols-12 h-24 items-center  ">
       <div className="col-span-2 relative">
         <Link href="/">
-          <Image src={logo} contain="true" width={100} />
+          <Image src={logo} contain="true" width={100} alt="na" />
         </Link>
       </div>
 
