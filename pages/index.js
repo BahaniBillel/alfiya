@@ -122,7 +122,7 @@ export default function Home() {
           {data.map((art) => (
             <ArticleCard
               key={art.id}
-              href={`blog/${art.title}`}
+              href={`blogs/${art.title}`}
               category={art.category}
               image={art.image}
               date={art.date}

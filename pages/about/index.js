@@ -1,7 +1,8 @@
 import React from "react";
+import NavigationBlog from "../../components/navigationBlog";
 
 function About() {
-  return <div>About</div>;
+  return <NavigationBlog />;
 }
 
 export default About;

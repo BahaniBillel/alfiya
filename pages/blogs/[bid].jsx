@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { collection, doc, getDocs, setDoc } from "firebase/firestore";
 import { db } from "../../firebaseConfig";
 import Navigation from "../../components/navigation";
@@ -17,6 +17,7 @@ import {
 import Link from "next/link";
 import ArticleCard from "../../components/articlecard";
 import Footer from "../../components/footer";
+import Indicator from "../../components/indicators";
 
 const data = [
   {
@@ -115,6 +116,27 @@ const data = [
 
 function Blog({ page }) {
   const { posts } = page;
+  const myRef = useRef();
+  const [completion, setCompletion] = useState();
+
+  useEffect(() => {
+    const updateScrollCompletion = () => {
+      const scrollProgress = window.scrollY;
+      if (scrollProgress > 550) {
+        setCompletion(`text-red-400`);
+
+        // setCompletion(Number(scrollProgress).toFixed(2));
+      }
+
+      console.log(scrollProgress);
+    };
+
+    window.addEventListener("scroll", updateScrollCompletion);
+    return () => {
+      window.addEventListener("scroll", updateScrollCompletion);
+    };
+  }, []);
+
   return (
     <>
       <div className="pb-44">
@@ -168,7 +190,10 @@ function Blog({ page }) {
                 <div className="px-10  flex flex-col space-y-10 ">
                   <p className=" text-lg font-light -mb-10">
                     By :
-                    <span className="py-3 text-lg font-semibold">
+                    <span
+                      className={`py-3 text-lg ${completion} font-semibold`}
+                      ref={myRef}
+                    >
                       {post.author}
                     </span>
                   </p>
@@ -211,6 +236,8 @@ function Blog({ page }) {
 
               {/* right section */}
               <section className=" md:px-auto  md:col-span-1 md:pl-5 flex flex-col justify-center items-center md:items-start md:justify-start py-3 space-y-5  ">
+                {/* <Indicator subtitles={data} /> */}
+
                 <p className="text-lg font-semibold py-5 border-b-2 border-solid border-black w-full">
                   Recent post
                 </p>
@@ -220,7 +247,7 @@ function Blog({ page }) {
                   .map((art) => (
                     <ArticleCard
                       key={art.id}
-                      href={`blog`}
+                      href={`blogs`}
                       category={art.category}
                       image={art.image}
                       date={art.date}

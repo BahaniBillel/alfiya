@@ -26,10 +26,18 @@ const NavigationBlog = () => {
 
       <nav className="col-span-6 md:col-span-7">
         <ul className=" hidden md:flex flex-row space-x-14 justify-center  ">
-          <li className="nav ">Home</li>
-          <li className="nav">Blogs</li>
-          <li className="nav">Community</li>
-          <li className="nav">Contact</li>
+          <Link href={`/`}>
+            <li className="nav">Home</li>
+          </Link>
+          <Link href={`/about`}>
+            <li className="nav">About us</li>
+          </Link>
+          <Link href={`/blogs`}>
+            <li className="nav">Blogs</li>
+          </Link>
+          <Link href={`/contact`}>
+            <li className="nav">Contact</li>
+          </Link>
         </ul>
         <FaBars className="block md:hidden text-xl" />
       </nav>
