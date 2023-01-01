@@ -120,7 +120,7 @@ function LatestBlogs() {
           <div className="p-8 border-2 border-solid border-black w-80 h-64 flex flex-col justify-center space-y-8">
             <h1 className="font-semibold text-3xl">Fashion</h1>
             <p className="font-extralight">
-              Posts related to the world's trends in Fashion style. Photo
+              Posts related to the worlds trends in Fashion style. Photo
               galleries and inspiration for photo sessions.
             </p>
             <div className="flex flex-row space-x-2 items-center text-xs font-bold mt-4 cursor-pointer">
@@ -152,7 +152,7 @@ function LatestBlogs() {
           <div className="p-8 border-2 border-solid border-black w-80 h-64 flex flex-col justify-center space-y-8">
             <h1 className="font-semibold text-3xl">Traveling</h1>
             <p className="font-extralight">
-              Posts related to the world's trends in Fashion style. Photo
+              Posts related to the worlds trends in Fashion style. Photo
               galleries and inspiration for photo sessions.
             </p>
             <div className="flex flex-row space-x-2 items-center text-xs font-bold mt-4 cursor-pointer">
