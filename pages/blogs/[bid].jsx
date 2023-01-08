@@ -3,7 +3,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { collection, doc, getDocs, setDoc } from "firebase/firestore";
 import { db } from "../../firebaseConfig";
 import Navigation from "../../components/navigation";
-import NavigationBlog from "../../components/navigationBlog";
 import Image from "next/image";
 import Paragraph from "../../components/paragraph";
 import {
@@ -18,6 +17,7 @@ import Link from "next/link";
 import ArticleCard from "../../components/articlecard";
 import Footer from "../../components/footer";
 import Indicator from "../../components/indicators";
+import SearchInput from "../../components/searchinput";
 
 const data = [
   {
@@ -137,9 +137,21 @@ function Blog({ page }) {
     };
   }, []);
 
+  // search field
+  const [searchenable, setSearchenable] = useState(false);
+  const [show, setShow] = useState("hidden");
+  const HandleSearchClick = () => {
+    setSearchenable(true);
+    setShow("flex ");
+  };
+
+  const handleXmark = () => {
+    setShow("hidden");
+  };
+
   return (
     <>
-      <div className="pb-44">
+      <div className="pb-44 relative">
         {posts.map((post) => (
           <div className="" key={post.id}>
             {/* upper ribbon */}
@@ -154,7 +166,8 @@ function Blog({ page }) {
               </ul>
             </div>
             {/* navigation bar */}
-            <NavigationBlog />
+
+            <Navigation search={HandleSearchClick} />
 
             {/* page content */}
 
@@ -259,6 +272,7 @@ function Blog({ page }) {
             </div>
           </div>
         ))}
+        <SearchInput toggle={show} xmark={handleXmark} />
       </div>
       <Footer />
     </>

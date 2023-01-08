@@ -10,6 +10,10 @@
     @apply cursor-pointer  transition-all duration-500 hover:text-teal-500  ease-in-out;
   }
 
+  .navmobile {
+    @apply cursor-pointer  transition-all duration-500 hover:text-teal-500  ease-in-out text-4xl py-3 font-sans font-semibold hover:pl-2;
+  }
+
   .link {
     @apply hover:text-teal-400 transition-all duration-500 ease-in-out;
   }

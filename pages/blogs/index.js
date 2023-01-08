@@ -104,9 +104,10 @@ function LatestBlogs() {
   return (
     <div>
       <Navigation />
-      <div className="px-20 md:px-44">
-        <div className="pl-96 border-b-2 border-solid border-black">
-          <h1 className="mt-24 text-7xl font-sans font-semibold">
+      <div className="px-5 md:px-44">
+        {/* latest blog */}
+        <div className="px-4 md:pl-96 border-b-2 border-solid border-black">
+          <h1 className="mt-24 text-5xl md:text-7xl font-sans font-semibold">
             Latest blogs
           </h1>
           <p className="text-xl font-light tracking-widest py-8 leading-8">
@@ -116,7 +117,7 @@ function LatestBlogs() {
           </p>
         </div>
         {/* fashion */}
-        <div className="py-5 flex flex-row">
+        <div className="py-5 flex flex-col items-center md:flex-row">
           <div className="p-8 border-2 border-solid border-black w-80 h-64 flex flex-col justify-center space-y-8">
             <h1 className="font-semibold text-3xl">Fashion</h1>
             <p className="font-extralight">
@@ -129,7 +130,7 @@ function LatestBlogs() {
             </div>
           </div>
 
-          <div className="flex-1 flex flex-row">
+          <div className="flex-1 flex flex-col md:flex-row">
             {data
               .filter((art) => art.category == "fashion" && art.id < 4)
               .map((art) => (
@@ -148,7 +149,7 @@ function LatestBlogs() {
 
         {/* traveling */}
 
-        <div className="py-5 flex flex-row border-t-2 border-solid border-black">
+        <div className="py-5 flex flex-col md:justify-center md:flex-row border-t-2 border-solid border-black">
           <div className="p-8 border-2 border-solid border-black w-80 h-64 flex flex-col justify-center space-y-8">
             <h1 className="font-semibold text-3xl">Traveling</h1>
             <p className="font-extralight">
@@ -161,7 +162,7 @@ function LatestBlogs() {
             </div>
           </div>
 
-          <div className="flex-1 grid grid-flow-row grid-cols-2 gap-6">
+          <div className="flex-1 grid grid-flow-row md:grid-cols-2 gap-6">
             {data
               .filter((art) => art.category == "Traveling" && art.id < 8)
               .map((art) => (

@@ -1,10 +1,10 @@
 import React from "react";
-import NavigationBlog from "../../components/navigationBlog";
+import Navigation from "../../components/navigation";
 
 function Contact() {
   return (
     <div>
-      <NavigationBlog />
+      <Navigation />
     </div>
   );
 }

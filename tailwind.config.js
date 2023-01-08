@@ -10,11 +10,20 @@ module.exports = {
       fontFamily: {
         sans: ["Lato", ...defaultTheme.fontFamily.sans],
       },
+      animation: {
+        fade: "fadeOut 5s ease-in-out",
+      },
+      keyframes: (theme) => ({
+        fadeOut: {
+          "0%": { backgroundColor: theme("colors.red.300") },
+          "100%": { backgroundColor: theme("colors.transparent") },
+        },
+      }),
     },
   },
   plugins: [],
-  // theme: {
-  //   colors: {
+  // // theme: {
+  // //   colors: {
   //     transparent: "transparent",
   //     darkGray: "#202729",
   //     greenPrimary: "#4ba173",
@@ -23,11 +32,11 @@ module.exports = {
   //     lightGray: "#e5e7eb",
   //     lightEmerald: "#ecfdf5",
   //     red: "#dc2626",
-  //     // beige: "#fbd1a2",
-  //     // blackgrey: "#1f2937",
-  //     // gray: "#9ca3af",
-  //     // bluegreen: "#0d98ba",
-  //     // lightOrange: "#fff7ed",
-  //   },
-  // },
+  // //     // beige: "#fbd1a2",
+  // //     // blackgrey: "#1f2937",
+  // //     // gray: "#9ca3af",
+  // //     // bluegreen: "#0d98ba",
+  // //     // lightOrange: "#fff7ed",
+  // //   },
+  // // },
 };
