@@ -10,11 +10,13 @@ import Photo2 from "../images/home-banner.jpg";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Footer from "../components/footer";
+import ArticleCardTwo from "../components/articlecardTwo";
 
 const data = [
   {
     id: 1,
     category: "Traveling",
+    color: "bg-teal-200",
     image: "https://picsum.photos/id/230/200/300",
     date: "December 22th,2022",
     title: "Astonishing Facts About The Greek Resorts",
@@ -24,6 +26,7 @@ const data = [
   {
     id: 2,
     category: "Traveling",
+    color: "bg-teal-200",
     image: "https://picsum.photos/id/229/200/300",
     date: "December 22th,2022",
     title: "Astonishing Facts About The Greek Resorts",
@@ -33,15 +36,17 @@ const data = [
   {
     id: 3,
     category: "Traveling",
+    color: "bg-teal-200",
     image: "https://picsum.photos/id/228/200/300",
     date: "December 22th,2022",
     title: "Astonishing Facts About The Greek Resorts",
     content:
-      "You can also use variant modifiers to target media queries like responsive breakpoints, dark mode, prefers-reduced-motion...",
+      "The longest word in any of the major English language dictionaries is pneumonoultramicros copicsilicovol canoconiosis, a word that refers to a lung disease contracted from the inhalation of very fine silica particles, specifically from a volcano; medically, it is the same as silicosis.",
   },
   {
     id: 4,
     category: "Traveling",
+    color: "bg-teal-200",
     // image: "https://picsum.photos/id/227/200/300",
     date: "December 22th,2022",
     title: "Astonishing Facts About The Greek Resorts",
@@ -51,6 +56,7 @@ const data = [
   {
     id: 5,
     category: "Traveling",
+    color: "bg-teal-200",
     image: "https://picsum.photos/id/225/200/300",
     date: "December 22th,2022",
     title: "Astonishing Facts About The Greek Resorts 50",
@@ -61,6 +67,7 @@ const data = [
   {
     id: 6,
     category: "Traveling",
+    color: "bg-teal-200",
     image: "https://picsum.photos/id/223/200/300",
     date: "December 22th,2022",
     title: "Astonishing Facts About The Greek Resorts 50",
@@ -71,6 +78,7 @@ const data = [
   {
     id: 7,
     category: "Traveling",
+    color: "bg-teal-200",
     image: "https://picsum.photos/id/221/200/300",
     date: "December 22th,2022",
     title: "Astonishing Facts About The Greek Resorts 50",
@@ -80,6 +88,7 @@ const data = [
   {
     id: 8,
     category: "Traveling",
+    color: "bg-teal-200",
     image: "https://picsum.photos/id/220/200/300",
     date: "December 22th,2022",
     title: "Astonishing Facts About The Greek Resorts 50",
@@ -89,6 +98,7 @@ const data = [
   {
     id: 9,
     category: "Traveling",
+    color: "bg-teal-200",
     // image: "https://picsum.photos/id/219/200/300",
     date: "December 22th,2022",
     title: "Astonishing Facts About The Greek Resorts 50",
@@ -97,7 +107,8 @@ const data = [
   },
   {
     id: 10,
-    category: "Traveling",
+    category: "Economy",
+    color: "bg-fuchsia-200 ",
     image: "https://picsum.photos/id/218/199/300",
     date: "December 22th,2022",
     title: "Astonishing Facts About The Greek Resorts 50",
@@ -118,16 +129,18 @@ export default function Home() {
       <main className="pb-44">
         <Navigation />
         <Banner />
-        <div className="grid px-3   md:grid-rows-3 md:grid-cols-4 md:grid-flow-col gap-5 items-center justify-center mt-5 md:px-32 ">
+        <div className="grid px-3  lg:grid-rows-3 lg:grid-cols-2 lg:grid-flow-row gap-5 items-center justify-center mt-5 lg:px-32 ">
           {data.map((art) => (
-            <ArticleCard
+            <ArticleCardTwo
               key={art.id}
               href={`blogs/${art.title}`}
+              hrefcat={`category`}
               category={art.category}
-              image={art.image}
+              image={art.image || Photo}
               date={art.date}
               title={art.title}
               content={art.content}
+              catcolor={art.color}
             />
           ))}
         </div>

@@ -31,23 +31,26 @@ const Navigation = ({ search }) => {
   };
 
   return (
-    <div className=" px-5 md:px-44 py-4 grid grid-cols-12 h-24 items-center  ">
+    <div className=" px-5 lg:px-44 py-4 grid grid-cols-12 h-24 items-center  ">
       <div className="col-span-11 md:col-span-3 relative">
         <Link href="/">
           <Image src={logo} contain="true" width={100} alt="na" />
         </Link>
       </div>
 
-      <nav className="col-span-1 md:col-span-6 ">
+      <nav className="col-span-1 md:col-span-9 lg:col-span-6 ">
         <ul className=" hidden md:flex flex-row space-x-14 justify-center ">
           <Link href="/">
             <li className="nav">Home</li>
           </Link>
           <Link href="/about">
-            <li className="nav">About us</li>
+            <li className="nav">About me</li>
           </Link>
           <Link href="/blogs">
             <li className="nav">Blogs</li>
+          </Link>
+          <Link href="/services">
+            <li className="nav">Services</li>
           </Link>
           <Link href="/contact">
             <li className="nav">Contact</li>
@@ -76,10 +79,13 @@ const Navigation = ({ search }) => {
               <li className="navmobile">Home</li>
             </Link>
             <Link href="/about" onClick={LinkItemClicked}>
-              <li className="navmobile">About us</li>
+              <li className="navmobile">About me</li>
             </Link>
             <Link href="/blogs" onClick={LinkItemClicked}>
               <li className="navmobile">Blogs</li>
+            </Link>
+            <Link href="/services" onClick={LinkItemClicked}>
+              <li className="navmobile">Services</li>
             </Link>
             <Link href="/contact" onClick={LinkItemClicked}>
               <li className="navmobile">Contact</li>
@@ -102,7 +108,7 @@ const Navigation = ({ search }) => {
       </nav>
 
       {/* social linls */}
-      <div className="md:col-span-3 hidden md:flex  ">
+      <div className="lg:col-span-3 hidden lg:flex  ">
         <div className="flex flex-grow"></div>
         <SocialLinks search={search} />
       </div>

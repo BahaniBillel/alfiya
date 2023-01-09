@@ -1,0 +1,3 @@
+#1 
+ISSUE on vercel :  Module not found: Can't resolve 'firebase/app' in '/vercel/path0'
+solution : npm i firebase

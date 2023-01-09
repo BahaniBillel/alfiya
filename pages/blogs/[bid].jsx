@@ -171,7 +171,7 @@ function Blog({ page }) {
 
             {/* page content */}
 
-            <div className="grid md:grid-cols-4 mt-8 font-sans  md:px-32">
+            <div className="grid lg:grid-cols-4 mt-8 font-sans  lg:px-32">
               {/* left section */}
               <section className=" md:col-span-3 md:px-5 h-full md:border-r-2 border-solid border-black ">
                 {/* title and date */}
@@ -193,7 +193,7 @@ function Blog({ page }) {
                     className="w-fit grayscale hover:grayscale-0 transition-all duration-700 ease-in-out"
                     alt="na"
                   />
-                  <span className="text-white bg-teal-400 rounded-sm text-sm p-2 z-50 absolute left-5 bottom-5">
+                  <span className="text-white bg-teal-400 rounded-sm text-sm p-2 z-20 absolute left-5 bottom-5">
                     {post.category}
                   </span>
                 </div>
@@ -248,26 +248,27 @@ function Blog({ page }) {
               </section>
 
               {/* right section */}
-              <section className=" md:px-auto  md:col-span-1 md:pl-5 flex flex-col justify-center items-center md:items-start md:justify-start py-3 space-y-5  ">
+              <section className=" md:px-auto  md:col-span-1  md:pl-5 flex flex-col justify-center items-center md:items-start md:justify-start py-3 space-y-5  ">
                 {/* <Indicator subtitles={data} /> */}
 
                 <p className="text-lg font-semibold py-5 border-b-2 border-solid border-black w-full">
                   Recent post
                 </p>
-
-                {data
-                  .filter((art) => art.id < 4)
-                  .map((art) => (
-                    <ArticleCard
-                      key={art.id}
-                      href={`blogs`}
-                      category={art.category}
-                      image={art.image}
-                      date={art.date}
-                      title={art.title}
-                      content={art.content}
-                    />
-                  ))}
+                <div className="md:grid md:grid-col-2 md:grid-flow-col">
+                  {data
+                    .filter((art) => art.id < 4)
+                    .map((art) => (
+                      <ArticleCard
+                        key={art.id}
+                        href={`blogs`}
+                        category={art.category}
+                        image={art.image}
+                        date={art.date}
+                        title={art.title}
+                        content={art.content}
+                      />
+                    ))}
+                </div>
               </section>
             </div>
           </div>
