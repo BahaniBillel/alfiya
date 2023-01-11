@@ -4,7 +4,7 @@ import Link from "next/link";
 
 function Footer() {
   return (
-    <footer className="w-full py-20 px-5 md:px-36 bg-black flex flex-col md:flex-row sapce-x-5 items-start justify-center ">
+    <footer className="w-full py-20 px-5 md:px-36 bg-black flex flex-col md:flex-row sapce-x-5 items-start justify-center font-sans ">
       {/* first box :identification */}
       <div className="text-white px-10 md:w-1/3">
         <h1 className="text-white font-semibold text-4xl w-1/3 mb-10 ">

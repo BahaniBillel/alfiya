@@ -11,21 +11,36 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import Footer from "../components/footer";
 import ArticleCardTwo from "../components/articlecardTwo";
+import {
+  Inter,
+  Alata,
+  Noto_Kufi_Arabic,
+  Noto_Naskh_Arabic,
+  Noto_Sans_Arabic,
+} from "@next/font/google";
+
+const inter = Inter({ subsets: ["latin"] });
+const alata = Alata({
+  subsets: ["latin"],
+  weight: "400",
+});
+
+const kufi = Noto_Kufi_Arabic({ subsets: ["arabic"], weight: "400" });
 
 const data = [
   {
     id: 1,
-    category: "Traveling",
-    color: "bg-teal-200",
+    category: "Inbound Marketing",
+    color: "bg-red-200",
     image: "https://picsum.photos/id/230/200/300",
     date: "December 22th,2022",
-    title: "Astonishing Facts About The Greek Resorts",
+    title: "Have you ever thought about this matter before going to bed?!",
     content:
-      "You can also use variant modifiers to target media queries like responsive breakpoints, dark mode, prefers-reduced-motion...",
+      "Online shopping is enjoyable and practical for consumers, and there is absolutely no danger that they will be stuck behind someone who is yelling about an expired coupon. ",
   },
   {
     id: 2,
-    category: "Traveling",
+    category: "Outbound Marketing",
     color: "bg-teal-200",
     image: "https://picsum.photos/id/229/200/300",
     date: "December 22th,2022",
@@ -35,38 +50,39 @@ const data = [
   },
   {
     id: 3,
-    category: "Traveling",
-    color: "bg-teal-200",
+    category: "Market Research",
+    color: "bg-lime-200",
     image: "https://picsum.photos/id/228/200/300",
     date: "December 22th,2022",
-    title: "Astonishing Facts About The Greek Resorts",
+    title: "You won't need this anymore ?!",
     content:
-      "The longest word in any of the major English language dictionaries is pneumonoultramicros copicsilicovol canoconiosis, a word that refers to a lung disease contracted from the inhalation of very fine silica particles, specifically from a volcano; medically, it is the same as silicosis.",
+      "The longest word in any of the major English language dictionaries is pneumon oultram icros copicsilicovol canoconiosis, a word that refers to a lung disease contracted from the ,inhalation of very fine silica particles, specifically from a volcano; medically, it is the same as silicosis.",
   },
   {
     id: 4,
-    category: "Traveling",
-    color: "bg-teal-200",
-    // image: "https://picsum.photos/id/227/200/300",
+    category: "UI/UX Design",
+    color: "bg-orange-200",
+    image: "https://picsum.photos/id/227/200/300",
     date: "December 22th,2022",
-    title: "Astonishing Facts About The Greek Resorts",
+    title: "7 Tricks you must know to improve your SEO.",
     content:
       "You can also use variant modifiers to target media queries like responsive breakpoints, dark mode, prefers-reduced-motion...",
   },
   {
     id: 5,
-    category: "Traveling",
-    color: "bg-teal-200",
+    category: "Brand Management",
+    color: "bg-blue-200",
     image: "https://picsum.photos/id/225/200/300",
     date: "December 22th,2022",
-    title: "Astonishing Facts About The Greek Resorts 50",
+    title:
+      "10 Tips to protect yourself and your family from the seasonal flue.",
     content:
       "You can also use variant modifiers to target media queries like responsive breakpoints, dark mode, prefers-reduced-motion...",
   },
   ,
   {
     id: 6,
-    category: "Traveling",
+    category: "Data Analysis",
     color: "bg-teal-200",
     image: "https://picsum.photos/id/223/200/300",
     date: "December 22th,2022",
@@ -77,8 +93,8 @@ const data = [
 
   {
     id: 7,
-    category: "Traveling",
-    color: "bg-teal-200",
+    category: "Mobile Marketing",
+    color: "bg-sky-400",
     image: "https://picsum.photos/id/221/200/300",
     date: "December 22th,2022",
     title: "Astonishing Facts About The Greek Resorts 50",
@@ -87,7 +103,7 @@ const data = [
   },
   {
     id: 8,
-    category: "Traveling",
+    category: "Content Marketing",
     color: "bg-teal-200",
     image: "https://picsum.photos/id/220/200/300",
     date: "December 22th,2022",
@@ -97,8 +113,8 @@ const data = [
   },
   {
     id: 9,
-    category: "Traveling",
-    color: "bg-teal-200",
+    category: "Social Media",
+    color: "bg-rose-300",
     // image: "https://picsum.photos/id/219/200/300",
     date: "December 22th,2022",
     title: "Astonishing Facts About The Greek Resorts 50",
@@ -126,24 +142,31 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="pb-44">
+      <main className="pb-44 font-sans">
         <Navigation />
         <Banner />
-        <div className="grid px-3  lg:grid-rows-3 lg:grid-cols-2 lg:grid-flow-row gap-5 items-center justify-center mt-5 lg:px-32 ">
-          {data.map((art) => (
-            <ArticleCardTwo
-              key={art.id}
-              href={`blogs/${art.title}`}
-              hrefcat={`category`}
-              category={art.category}
-              image={art.image || Photo}
-              date={art.date}
-              title={art.title}
-              content={art.content}
-              catcolor={art.color}
-            />
-          ))}
-        </div>
+        <section className="grid px-3  lg:grid-rows-3 lg:grid-cols-3 lg:grid-flow-row gap-5 items-center justify-center mt-5 lg:px-32 ">
+          <div className=" lg:col-span-2">
+            {data.map((art) => (
+              <ArticleCardTwo
+                key={art.id}
+                href={`blogs/${art.title}`}
+                hrefcat={`category`}
+                category={art.category}
+                image={art.image || Photo}
+                date={art.date}
+                title={art.title}
+                content={art.content}
+                catcolor={art.color}
+                daysago="3 days ago."
+              />
+            ))}
+          </div>
+
+          <div className="bg-zinc-100 h-full " style={alata.style}>
+            filters, recommandations, profile, last saved,
+          </div>
+        </section>
       </main>
       <Footer />
     </>

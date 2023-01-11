@@ -2,7 +2,7 @@ import React from "react";
 
 function Paragraph({ subtitle, subcontent, quotation, owner }) {
   return (
-    <div>
+    <div className="font-sans">
       <h1 className="text-4xl my-5">{subcontent ? subtitle : null}</h1>
       <p className="text-gray-700 text-lg font-light tracking-wide leading-8">
         {" "}

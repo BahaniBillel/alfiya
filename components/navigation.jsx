@@ -31,7 +31,7 @@ const Navigation = ({ search }) => {
   };
 
   return (
-    <div className=" px-5 lg:px-44 py-4 grid grid-cols-12 h-24 items-center  ">
+    <div className=" px-5 lg:px-44 py-4 grid grid-cols-12 h-24 items-center   ">
       <div className="col-span-11 md:col-span-3 relative">
         <Link href="/">
           <Image src={logo} contain="true" width={100} alt="na" />
@@ -39,7 +39,7 @@ const Navigation = ({ search }) => {
       </div>
 
       <nav className="col-span-1 md:col-span-9 lg:col-span-6 ">
-        <ul className=" hidden md:flex flex-row space-x-14 justify-center ">
+        <ul className=" hidden md:flex flex-row space-x-14 justify-center font-sans">
           <Link href="/">
             <li className="nav">Home</li>
           </Link>
@@ -49,8 +49,27 @@ const Navigation = ({ search }) => {
           <Link href="/blogs">
             <li className="nav">Blogs</li>
           </Link>
-          <Link href="/services">
-            <li className="nav">Services</li>
+          <Link href="/services" className="group relative ">
+            <li className="nav">
+              Services
+              <ul className="hidden group-hover:flex flex-col absolute top-5 left-0 z-30 bg-white w-40 h-96 py-5 px-3 rounded-sm shadow-md  space-y-3">
+                <Link href="blogs ">
+                  <li className=" sublink">Developpment siteweb</li>
+                </Link>
+                <Link href="blogs ">
+                  <li className=" sublink">Application mobile</li>
+                </Link>
+                <Link href="blogs ">
+                  <li className=" sublink">Whiteboard anaimation</li>
+                </Link>
+
+                <div className="bg-gray-100 rounded-sm py-3  absolute left-0 bottom-0 w-fit px-10">
+                  <Link href="/">
+                    <Image src={logo} alt="na" />
+                  </Link>
+                </div>
+              </ul>
+            </li>
           </Link>
           <Link href="/contact">
             <li className="nav">Contact</li>

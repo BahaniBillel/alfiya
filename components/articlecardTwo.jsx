@@ -13,9 +13,13 @@ function ArticleCardTwo({
   href,
   hrefcat,
   catcolor,
+  daysago,
 }) {
   return (
-    <div className="flex-nowrap flex flex-col space-y-3 items-start  px-5 md:px-20 lg:px-5 bg-white border-b  hover:shadow-md  duration-200 ease-in-out transition-all py-5 ">
+    <div
+      className="flex-nowrap flex flex-col space-y-3 items-start  px-5 md:px-20 lg:px-5
+     bg-white border-b  hover:shadow-md  duration-200 ease-in-out transition-all py-5 font-sans "
+    >
       {/* upper row */}
       <div className="flex flex-row justify-center items-center flex-nowrap space-x-3">
         <div className="relative h-5 w-5">
@@ -24,23 +28,23 @@ function ArticleCardTwo({
           </Link>
         </div>
         <div className="flex flex-row space-x-2 justify-center text-[10px] items-center  nowrap text-gray-600">
-          <p>Bahani Billel</p>
+          <p className="text-black font-semibold">Bahani Billel</p>
           <p>{date}</p>
-          <p>{category}</p>
+          <p>{daysago}</p>
         </div>
       </div>
 
       {/* middle row : content */}
       <div className="flex flex-row space-x-3">
-        <div className="pr-5 lg:h-24 lg:min-h-[80px] overflow-clip ">
+        <div className="pr-5 ltr:ml-3 rtl:mr-3  ">
           <Link href={href}>
-            <h2 className="font-semibold  text-sm md:text-xl">{title}</h2>
+            <h2 className="font-semibold  text-lg md:text-xl ">{title}</h2>
           </Link>
-          <p className=" hidden md:block text-sm text-gray-600 text-clip overflow-hidden   ">
+          <p className=" hidden md:block text-sm text-gray-600 line-clamp-2 md:line-clamp-3   ">
             {content}
           </p>
         </div>
-        <div className="relative h-10 w-20 md:h-24 md:w-48 md:min-w-[120px] md:min-h-[60px] ">
+        <div className="relative h-10 w-28 md:h-24 md:w-auto md:min-w-[120px] md:min-h-[60px] ">
           <Link href={href}>
             <Image src={image} fill className="w-fit " alt="na" />
           </Link>

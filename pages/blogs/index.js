@@ -104,7 +104,7 @@ function LatestBlogs() {
   return (
     <div>
       <Navigation />
-      <div className="px-5 md:px-44">
+      <div className="px-5 md:px-44 font-sans">
         {/* latest blog */}
         <div className="px-4 md:pl-96 border-b-2 border-solid border-black">
           <h1 className="mt-24 text-5xl md:text-7xl font-sans font-semibold">

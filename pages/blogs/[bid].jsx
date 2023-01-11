@@ -151,7 +151,7 @@ function Blog({ page }) {
 
   return (
     <>
-      <div className="pb-44 relative">
+      <div className="pb-44 relative font-sans">
         {posts.map((post) => (
           <div className="" key={post.id}>
             {/* upper ribbon */}

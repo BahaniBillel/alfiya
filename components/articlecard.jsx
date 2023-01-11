@@ -6,7 +6,7 @@ import Link from "next/link";
 
 function ArticleCard({ category, date, image, title, content, href }) {
   return (
-    <div className="flex-nowrap flex flex-col   px-5 bg-white hover:shadow-md  duration-200 ease-in-out transition-all py-2 ">
+    <div className="flex-nowrap flex flex-col   px-5 bg-white hover:shadow-md  duration-200 ease-in-out transition-all py-2 font-sans ">
       {image ? (
         <div className=" relative overflow-hidden h-96 md:h-48">
           <h3 className="font-semibold py-1 absolute bottom-5 left-5 z-30 bg-gray-400 rounded-sm px-2 text-xs text-white">
