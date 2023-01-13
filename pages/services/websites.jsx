@@ -31,7 +31,7 @@ function Websites() {
         />
       </Head>
       <Navigation />
-      <div className="grid grid-cols-10 h-[1000px] font-sans">
+      <div className="grid grid-cols-10 pb-20 font-sans">
         {/* left side */}
         <div className="hidden lg:block lg:col-span-2 bg-white px-5 border-r ">
           <div className="py-28">
