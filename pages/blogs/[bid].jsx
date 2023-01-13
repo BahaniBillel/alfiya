@@ -254,7 +254,7 @@ function Blog({ page }) {
                 <p className="text-lg font-semibold py-5 border-b-2 border-solid border-black w-full">
                   Recent post
                 </p>
-                <div className="md:grid md:grid-col-2 md:grid-flow-col">
+                <div className="md:grid md:grid-col-2 md:grid-flow-col lg:grid-flow-row">
                   {data
                     .filter((art) => art.id < 4)
                     .map((art) => (

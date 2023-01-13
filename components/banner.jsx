@@ -51,7 +51,7 @@ const Banner = () => {
 
   return (
     <div
-      className="h-68 md:h-96 relative overflow-hidden bg-red-400 keen-slider"
+      className="h-68 md:h-96 relative overflow-hidden bg-white keen-slider"
       ref={sliderRef}
     >
       {ImagesData.map((img) => (

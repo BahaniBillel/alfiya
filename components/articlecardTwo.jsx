@@ -36,7 +36,7 @@ function ArticleCardTwo({
 
       {/* middle row : content */}
       <div className="flex flex-row space-x-3">
-        <div className="pr-5 ltr:ml-3 rtl:mr-3  ">
+        <div className="pr-5 ">
           <Link href={href}>
             <h2 className="font-semibold  text-lg md:text-xl ">{title}</h2>
           </Link>

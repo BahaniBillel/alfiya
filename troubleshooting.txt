@@ -1,3 +1,8 @@
 #1 
 ISSUE on vercel :  Module not found: Can't resolve 'firebase/app' in '/vercel/path0'
 solution : npm i firebase
+
+#2
+ISSUE :TypeError: Cannot read properties of undefined (reading 'map')
+Cause: i mapped an array of links objects , but only one object has a sub-array for sub-links
+solution: add an empty sub array to all links

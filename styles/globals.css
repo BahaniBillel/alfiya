@@ -18,6 +18,9 @@
     @apply hover:text-teal-400 transition-all duration-500 ease-in-out;
   }
   .sublink {
-    @apply text-gray-900 text-xs tracking-widest hover:pl-2 transition-all ease-in-out duration-200;
+    @apply text-gray-900 text-xs tracking-widest  transition-all ease-in-out duration-200 hover:font-bold;
+  }
+  .plink {
+    @apply pl-4 text-lg py-2 font-medium hover:bg-gray-100 hover:text-teal-500 transition-all duration-200 ease-in-out cursor-pointer tracking-wider;
   }
 }
