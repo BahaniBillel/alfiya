@@ -5,6 +5,7 @@ import Footer from "../../components/footer";
 import Link from "next/link";
 import Image from "next/image";
 import BannerImage from "../../public/images/screens2.png";
+import Me from "../../public/images/dotted.png";
 import Feature from "../../components/feature";
 
 function Websites() {
@@ -105,7 +106,7 @@ function Websites() {
               <div className="flex flex-row space-x-10">
                 <div className="flex flex-row flex-nowrap space-x-2 items-center">
                   <div className="h-8 w-8 rounded-full overflow-hidden relative border">
-                    <Image src={BannerImage} priority fill />
+                    <Image src={Me} priority fill />
                   </div>
                   <p className="text-xs">Developed by: BAHANI Billel</p>
                 </div>
