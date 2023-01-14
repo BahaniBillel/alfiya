@@ -5,7 +5,7 @@ import Footer from "../../components/footer";
 import Link from "next/link";
 import Image from "next/image";
 import BannerImage from "../../public/images/screens2.png";
-import Me from "../../public/images/dotted.png";
+import Me from "../../public/images/dotted2.png";
 import Feature from "../../components/feature";
 
 function Websites() {
@@ -97,7 +97,7 @@ function Websites() {
         <div className="col-span-10 lg:col-span-8 flex flex-col ">
           {/* banner */}
           <div className="relative  overflow-hidden border-b">
-            <Image src={BannerImage} priority />
+            <Image src={BannerImage} priority alt="na" />
           </div>
           {/* content */}
           <div className="bg-white p-4 lg:p-10">
@@ -106,7 +106,7 @@ function Websites() {
               <div className="flex flex-row space-x-10">
                 <div className="flex flex-row flex-nowrap space-x-2 items-center">
                   <div className="h-8 w-8 rounded-full overflow-hidden relative border">
-                    <Image src={Me} priority fill />
+                    <Image src={Me} priority fill alt="bahani billel" />
                   </div>
                   <p className="text-xs">Developed by: BAHANI Billel</p>
                 </div>

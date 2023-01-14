@@ -26,6 +26,9 @@ function Services() {
         <Link className="p-2 bg-red-200" href={`services/${sid}`}>
           websites
         </Link>
+        <Link className="p-2 bg-teal-200" href={`services/websites`}>
+          websites
+        </Link>
       </div>
     </div>
   );
