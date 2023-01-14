@@ -4,7 +4,7 @@ import Navigation from "../../components/navigation";
 import Footer from "../../components/footer";
 import Link from "next/link";
 import Image from "next/image";
-import BannerImage from "../../images/banner.jpg";
+import BannerImage from "../../images/screens2.png";
 import Feature from "../../components/feature";
 
 function Websites() {
@@ -20,6 +20,49 @@ function Websites() {
     { id: 9, name: "Informational website", url: "#" },
     { id: 10, name: "Online forum", url: "#" },
   ];
+
+  const pagecontent = [
+    {
+      id: 1,
+      name: "eCommerce website",
+      banner: "../../images/screens2.png",
+      developer: "Bahani Billel",
+      title: "  Organisation unique educational.",
+      description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
+      reprehenderit commodi cumque nulla debitis itaque, quibusdam id
+      qui, modi quia tenetur enim cupiditate deleniti, aliquid esse!
+      Explicabo optio odio molestiae eligendi? Dolorum quibusdam
+      molestias quas ut repellendus. Porro, ratione. Fuga cupiditate
+      ratione deleniti, dignissimos assumenda optio ea ab odio id quae`,
+      externlink: "https://taaj-yz7p.vercel.app/",
+      features: [
+        {
+          fid: 1,
+          small: "SEO Implementation",
+          feature: "The latest of SEO technlogie implemented in every webpage",
+        },
+        {
+          fid: 2,
+          small: "SEO Implementation",
+          feature: "The latest of SEO technlogie implemented in every webpag",
+        },
+        {
+          fid: 3,
+          small: "SEO Implementation",
+          feature: "The latest of SEO technlogie implemented in every webpag",
+        },
+      ],
+    },
+  ];
+
+  const [display, setDisplay] = React.useState(false);
+  const HandleProductDispaly = () => {
+    setDisplay(true);
+  };
+
+  const [{ id, name, url }] = pagelinks;
+  const contentIndex = pagecontent.find((page) => page.id == id);
+  console.log(contentIndex);
 
   return (
     <div>
@@ -40,7 +83,11 @@ function Websites() {
             </h4>
             <ul className=" ">
               {pagelinks.map((plink) => (
-                <li className="plink" key={plink.id}>
+                <li
+                  className="plink"
+                  key={plink.id}
+                  onClick={HandleProductDispaly}
+                >
                   <Link href={plink.url}>{plink.name}</Link>
                 </li>
               ))}
@@ -49,25 +96,35 @@ function Websites() {
         </div>
 
         {/* right side : banner and content */}
+
         <div className="col-span-10 lg:col-span-8 flex flex-col ">
           {/* banner */}
-          <div className="relative lg:h-96 overflow-hidden border-b">
+          <div className="relative  overflow-hidden border-b">
             <Image src={BannerImage} priority />
           </div>
           {/* content */}
           <div className="bg-white p-4 lg:p-10">
             {/* title and author */}
-            <div className="flex flex-col lg:flex-row lg:space-x-3 items-start lg:items-center justify-start ">
-              <h1 className="font-bold text-2xl w-3/4 lg:text-3xl tracking-wide order-2 lg:order-1">
+            <div className="flex flex-col space-y-4   justify-center ">
+              <div className="flex flex-row space-x-10">
+                <div className="flex flex-row flex-nowrap space-x-2 items-center">
+                  <div className="h-8 w-8 rounded-full overflow-hidden relative border">
+                    <Image src={BannerImage} priority fill />
+                  </div>
+                  <p className="text-xs">Developed by: BAHANI Billel</p>
+                </div>
+                <div className="flex flex-grow"></div>
+                <Link
+                  className="bg-black rounded-md py-1 font-light px-6 text-white"
+                  href="https://taaj-yz7p.vercel.app/"
+                  target="_blank"
+                >
+                  Visite
+                </Link>
+              </div>
+              <h1 className="font-bold text-2xl w-3/4 lg:text-3xl tracking-wide ">
                 Organisation unique educational.
               </h1>
-
-              <div className="flex flex-row flex-nowrap space-x-2 order-1 lg:order-2 items-center">
-                <div className="h-8 w-8 rounded-full overflow-hidden relative border">
-                  <Image src={BannerImage} priority fill />
-                </div>
-                <p className="text-xs">Developed by: BAHANI Billel</p>
-              </div>
             </div>
             {/* description of the offer */}
             <div>
