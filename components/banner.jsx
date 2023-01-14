@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import HomeBanner from "../images/home-banner.jpg";
+import HomeBanner from "../public/images/home-banner.jpg";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 

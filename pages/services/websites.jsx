@@ -4,7 +4,7 @@ import Navigation from "../../components/navigation";
 import Footer from "../../components/footer";
 import Link from "next/link";
 import Image from "next/image";
-import BannerImage from "../../images/screens2.png";
+import BannerImage from "../../public/images/screens2.png";
 import Feature from "../../components/feature";
 
 function Websites() {
@@ -59,10 +59,6 @@ function Websites() {
   const HandleProductDispaly = () => {
     setDisplay(true);
   };
-
-  const [{ id, name, url }] = pagelinks;
-  const contentIndex = pagecontent.find((page) => page.id == id);
-  console.log(contentIndex);
 
   return (
     <div>

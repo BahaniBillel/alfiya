@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
-import logo from "../images/ALIFYA-Logo.png";
-import logo2 from "../images/ALIFYA-Logo.jpg";
+import logo from "../public/images/ALIFYA-Logo.png";
+import logo2 from "../public/images/ALIFYA-Logo.jpg";
 
 import Link from "next/link";
 import { FaBars, FaAngleUp, FaAngleDown } from "react-icons/fa";

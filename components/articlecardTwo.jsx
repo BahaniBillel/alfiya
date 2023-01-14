@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Photo from "../images/cardImage.jpg";
+import Photo from "../public/images/cardImage.jpg";
 import React from "react";
 import { ForwardIcon } from "@heroicons/react/24/solid";
 import Link from "next/link";
