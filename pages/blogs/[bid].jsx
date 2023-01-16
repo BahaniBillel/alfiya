@@ -128,7 +128,7 @@ function Blog({ page }) {
         // setCompletion(Number(scrollProgress).toFixed(2));
       }
 
-      console.log(scrollProgress);
+      // console.log(scrollProgress);
     };
 
     window.addEventListener("scroll", updateScrollCompletion);
@@ -297,7 +297,7 @@ export async function getServerSideProps(context) {
   const page = blogs.find((x) => x.title === id);
   if (!page) return { notFound: true };
 
-  // console.log();
+  console.log(page);
   return {
     props: {
       page,

@@ -4,7 +4,6 @@ import React from "react";
 import Navigation from "../../components/navigation";
 
 function Services() {
-  const router = useRouter();
   const pagelinks = [
     { id: 1, name: "eCommerce website", url: "#" },
     { id: 2, name: "Business website", url: "#" },
@@ -18,14 +17,19 @@ function Services() {
     { id: 10, name: "Online forum", url: "#" },
   ];
 
-  const { sid } = router;
   return (
     <div>
       <Navigation />
       <div>
-        <Link className="p-2 bg-red-200" href={`services/${sid}`}>
-          websites
-        </Link>
+        {pagelinks.map((link) => (
+          <Link
+            className="p-2 bg-red-200 m-5"
+            href={`services/${link.name}`}
+            key={link.id}
+          >
+            {link.name}
+          </Link>
+        ))}
         <Link className="p-2 bg-teal-200" href={`services/websites`}>
           websites
         </Link>
