@@ -54,7 +54,7 @@ function Slug({ page }) {
 
         <div className="col-span-10 lg:col-span-8 flex flex-col ">
           {websites.map((web) => (
-            <div>
+            <div key={web.id}>
               {/* banner */}
               <div className="relative  overflow-hidden border-b">
                 <Image
